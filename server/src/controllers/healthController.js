@@ -1,13 +1,18 @@
+const {
+  getHealthMessage,
+  getTestData,
+} = require("../services/healthService");
+
 const getHealthStatus = (req, res) => {
-  res.json({
-    message: "Portfolio Management System API Running",
-  });
+  const response = getHealthMessage();
+
+  res.json(response);
 };
 
 const testRequestBody = (req, res) => {
-  res.json({
-    receivedData: req.body,
-  });
+  const response = getTestData(req.body);
+
+  res.json(response);
 };
 
 module.exports = {
