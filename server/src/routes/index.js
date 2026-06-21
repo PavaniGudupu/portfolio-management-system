@@ -1,17 +1,14 @@
 const express = require("express");
 
+const {
+  getHealthStatus,
+  testRequestBody,
+} = require("../controllers/healthController");
+
 const router = express.Router();
 
-router.get("/", (req, res) => {
-  res.json({
-    message: "Portfolio Management System API Running",
-  });
-});
+router.get("/", getHealthStatus);
 
-router.post("/test", (req, res) => {
-  res.json({
-    receivedData: req.body,
-  });
-});
+router.post("/test", testRequestBody);
 
 module.exports = router;
