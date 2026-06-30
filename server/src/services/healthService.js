@@ -1,7 +1,7 @@
+const { getHealthData } = require("../repositories/healthRepository");
+
 const getHealthMessage = () => {
-  return {
-    message: "Portfolio Management System API Running",
-  };
+  return getHealthData();
 };
 
 const getTestData = (data) => {
